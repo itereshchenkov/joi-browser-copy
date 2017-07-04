@@ -1,5 +1,5 @@
 'use strict';
 
-const Joi = require('joi');
+var Joi = require('joi');
 
 module.exports = Joi;

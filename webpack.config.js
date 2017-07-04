@@ -21,10 +21,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
                 babelrc: false,
-                presets: ['es2015'],
-                query: {
-                    presets: ["es2015"]
-                },
+                presets: [['es2015', {modules: false}]],
                 plugins: [
                     "transform-es2015-modules-commonjs",
                     "transform-object-assign",
@@ -48,10 +45,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
                 babelrc: false,
-                presets: ['es2015'],
-                query: {
-                    presets: ["es2015"]
-                },
+                presets: [['es2015', {modules: false}]],
                 plugins: [
                     "transform-es2015-modules-commonjs",
                     "transform-object-assign",
