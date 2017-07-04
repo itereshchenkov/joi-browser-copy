@@ -16,12 +16,50 @@ module.exports = {
       {
         // need to babelify joi, isemail, hoek, and topo's lib
         test: /[\\\/]node_modules[\\\/](joi[\\\/]lib[\\\/]|isemail[\\\/]lib[\\\/]|hoek[\\\/]lib[\\\/]|topo[\\\/]lib[\\\/])/,
-        loader: 'babel-loader'
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+                babelrc: false,
+                presets: [['es2015', {modules: false}]],
+                plugins: [
+                    "transform-es2015-modules-commonjs",
+                    "transform-object-assign",
+                    "transform-proto-to-assign",
+                    [
+                      "transform-es2015-classes",
+                      {
+                        "loose": true
+                      }
+                    ]
+                ]
+            }
+          }
+        ]
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+                babelrc: false,
+                presets: [['es2015', {modules: false}]],
+                plugins: [
+                    "transform-es2015-modules-commonjs",
+                    "transform-object-assign",
+                    "transform-proto-to-assign",
+                    [
+                      "transform-es2015-classes",
+                      {
+                        "loose": true
+                      }
+                    ]
+                ]
+            }
+          }
+        ]
       },
       {
         test: /\.json$/,
