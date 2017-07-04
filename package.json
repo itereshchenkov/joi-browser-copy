@@ -4,7 +4,7 @@
   "description": "joi object schema validation bundled for the browser",
   "main": "./dist/joi-browser.js",
   "scripts": {
-    "preinstall": "npm run build-webpack",
+    "postinstall": "npm run build-webpack",
     "prepublish": "npm run build-webpack",
     "build-webpack": "webpack && uglifyjs dist/joi-browser.js -c warnings=false -m | ntee dist/joi-browser.min.js | ngzip > dist/joi-browser.min.js.gz",
     "test": "karma start --single-run"
